@@ -1,0 +1,23 @@
+<table border="1" class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>First Name</th>
+            <th>last Name</th>
+            <th>Email </th>
+            <th>Volume</th>
+            <th>Met Quata?
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let temSalePerson of salesPersonList">
+        <td>{{temSalePerson.firstName}}</td>
+        <td>{{temSalePerson.lastName}}</td>
+        <td>{{temSalePerson.email}}</td>
+        <td >{{temSalePerson.salesVolume | currency:'INR'}}</td>
+        <td *ngIf="temSalePerson.salesVolume>100">Yes</td>
+        <td *ngIf="temSalePerson.salesVolume<100">No</td>
+    </tr>
+
+    </tbody>
+</table>
